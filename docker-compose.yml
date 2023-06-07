@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  db:
+    container_name: event_store_db
+    image: postgres:15.3
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=go_event_store
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - '5432:5432'
